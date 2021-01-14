@@ -7,5 +7,5 @@ To see the code for the data collection/film watching go to ---> Data_Collect_Co
 
 
 
-To test out the data collecting app, either download the files from Data_Collect_Code, install modules from requirements.txt and run collect_main.py or download the executable here DROPBOX
+To test out the data collecting app, either download the files from Data_Collect_Code, install modules from requirements.txt and run collect_main.py or download the executable here https://www.dropbox.com/s/tu8m4zda5899nv1/dist.zip?dl=0
 
