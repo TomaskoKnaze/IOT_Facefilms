@@ -1,0 +1,69 @@
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #B149FA;
+}
+
+.nav-pills .nav-link.active:hover {
+    color: #000;
+    background-color: #09FE9E;
+}
+
+.nav-pills .nav-link:hover {
+    color: #000;
+    background-color: #09FE9E;
+}
+
+.nav-link {
+    color: #000;
+    
+}
+
+.greencard {
+    border: 1;
+    border-color: #09FE9E;
+    border-radius: 0;
+    border-width: 2px;
+    background-color: #09FE9E;
+}
+
+.greenoutline {
+    border: 1;
+    border-color: #09FE9E;
+    border-radius: 0;
+    border-width: 2px;
+}
+
+.yellowcard {
+    border: 1;
+    border-color: #FFEE77;
+    border-radius: 0;
+    border-width: 2px;
+    background-color: #FFEE77;
+}
+
+.blackoutline {
+    border: 1;
+    border-color: #000;
+    border-radius: 0;
+    border-width: 2px;
+    
+    
+}
+
+.blackcard {
+    border: 1;
+    border-color: #000;
+    border-radius: 0;
+    border-width: 2px;
+    
+}
+
+.side-title {
+    color: #B149FA;
+
+}
+
+.side-line {
+    color: #000;
+
+}
