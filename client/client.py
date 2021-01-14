@@ -1,15 +1,3 @@
-"""
-This app creates a simple sidebar layout using inline style arguments and the
-dbc.Nav component.
-
-dcc.Location is used to track the current location, and a callback uses the
-current location to render the appropriate page content. The active prop of
-each NavLink is set automatically according to the current pathname. To use
-this feature you must install dash-bootstrap-components >= 0.11.0.
-
-For more details on building multi-page Dash applications, check out the Dash
-documentation: https://dash.plot.ly/urls
-"""
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
@@ -47,9 +35,6 @@ SIDEBAR_STYLE = {
     "bottom": 0,
     "width": "18rem",
     "padding": "3rem 2rem",
-    #"background-color": "#f8f9fa",
-    #"border" : "3px",
-    #"border-color" : '#000000',
     "border":"2px #B149FA solid",
 }
 
@@ -100,7 +85,7 @@ distraction_time_list = get_distraction_time(updated_dataframes, films)
 total_runtime = get_total_watchtime(updated_dataframes,films)
 average_rating = get_average_rating(film_ratings)
 
-#films = ["lalaland","twin_peaks","bromhilda"]
+
 links = []
 film_paths = []
 film_tag_list = []
@@ -115,9 +100,7 @@ for film in films:
     links.append(link)
 homelink = dbc.NavLink('Home', href=str("/"), active="exact", )
 links.insert(0,homelink)
-#print(links)
 
-#for k in fi
 
 
 #---------------------------------------   Functions    --------------------------------------- 
@@ -152,9 +135,6 @@ def card_func(name_of_film):
             relevant_actors = u[3]
             relevant_link = u[4]
     
-    
-    
-    #rating = dbc.Card(
     rating_content = dbc.CardBody(
             [
                 html.H5('Your Rating', className="card-title"),
@@ -168,12 +148,10 @@ def card_func(name_of_film):
             ],
             
         ),
-    #    style={"width": "18rem", "height" : "15rem", "color":"secondary"},
-    #)
+
 
     rating = dbc.Card(rating_content, color="#09FE9E", outline=True, style={"width": "12rem", "height" : "15rem",}, className="greencard"),
 
-    #fav_section = dbc.Card(
     fav_section_content = dbc.CardBody(
             [
                 html.H5('Favourite Section', className="card-title"),
@@ -186,11 +164,9 @@ def card_func(name_of_film):
                 
             ]
         ),
-    #    style={"width": "41rem", "height" : "15rem"},
-    #)
+
     fav_section = dbc.Card(fav_section_content,  outline=True, style={"width": "41rem", "height" : "15rem"},className="greenoutline"),
 
-    #imdb_data = dbc.Card(
     imdb_data_content = dbc.CardBody(
             [
                 html.H5('IMDb Rating', className="card-title"),
@@ -200,16 +176,11 @@ def card_func(name_of_film):
                     '''**Directed by:** {}  // **Cast:** {}'''.format(relevant_director, relevant_actors),
                     className="card-text",
                 )),
-                #html.P(
-                #    relevant_actors,
-                #    className="card-text",
-                #),
-                
+
                 dbc.CardLink("IMDb link", href= relevant_link),
             ]
         ),
-    #    style={"width": "24rem", "height" : "15rem"},
-    #)
+
     imdb_data = dbc.Card(imdb_data_content,  outline=True, style={"width": "24rem", "height" : "15rem"},className="greenoutline"),
 
     card = html.Div([
@@ -243,9 +214,7 @@ def graph_1(name_of_film):
         else:
             None
 
-    #title_line = html.H1(film_tag)
-    
-    #dominant_emotion_card = dbc.Card(
+
     dominant_emotion_content = dbc.CardBody(
             [
                 html.H5('Predominant Emotions', className="card-title"),
@@ -257,25 +226,21 @@ def graph_1(name_of_film):
                     "As calculated based on your expressions and movement while watching.",
                     className="card-text",
                 ),
-                #dbc.CardLink("Card link", href="#"),
-                #dbc.CardLink("External link", href="https://google.com"),
+
             ]
         ),
-    #    style={"width": "18rem", "height" : "30rem"},
-    #)
+
     dominant_emotion_card = dbc.Card(dominant_emotion_content, outline=True, style={"width": "18rem", "height" : "30rem"}, className="greencard"),
 
-    #average_movement_card = dbc.Card(
+
     average_movement_content = dbc.CardBody(
             [
                 html.H5('Distracted Time', className="card-title"),
                 html.H1('{}'.format((datetime.timedelta(seconds = relevant_distraction_time))), className="card-subtitle"),
-                #html.H4(relevant_distraction_time, className="card-title"),
                 html.P('  '),
                 html.P('  '),
                 html.H5('Average Movement', className="card-title"),
                 html.H1(round(relevant_avg_movement, 2), className="card-subtitle"),
-                #html.H6(relevant_dominant_emotions[2], className="card-sub-subtitle"),
                 html.P('  '),
                 html.P('  '),
                 html.P('  '),
@@ -284,12 +249,10 @@ def graph_1(name_of_film):
                     "Both distraction and movement influence your film rating.",
                     className="card-text",
                 ),
-                #dbc.CardLink("Card link", href="#"),
-                #dbc.CardLink("External link", href="https://google.com"),
+
             ]
         ),
-    #    style={"width": "18rem", "height" : "30rem"},
-    #)
+
     average_movement_card = dbc.Card(average_movement_content, outline=True, style={"width": "18rem", "height" : "30rem"},className="greencard"),
 
     #----------------------- Graph1------------
@@ -356,7 +319,7 @@ def graph_1(name_of_film):
              ),
     ])
 
-    #graph_card_1 = html.Div(card_graph)
+
     return data_body 
 
 
@@ -375,8 +338,6 @@ def homepage():
         ],
         
     ),
-    #    style={"width": "18rem", "height" : "15rem", "color":"secondary"},
-    #)
 
     total_run_time = dbc.Card(total_run_time_content, color="#09FE9E", outline=True, style={"width": "18rem", "height" : "15rem",}, className="blackcard"),
 
@@ -393,8 +354,7 @@ def homepage():
         ],
         
     ),
-    #    style={"width": "18rem", "height" : "15rem", "color":"secondary"},
-    #)
+
 
     average_rating_card = dbc.Card(average_rating_content, color="#09FE9E", outline=True, style={"width": "18rem", "height" : "15rem",}, className="blackcard"),
     
@@ -422,8 +382,6 @@ def homepage():
              style={"margin-top": "2rem",}, 
              ),
     ])
-
-    #graph_card_1 = html.Div(card_graph)
     return graph_body
 
 
@@ -488,12 +446,6 @@ def render_page_content(pathname):
 
     elif pathname == "":
         return html.H1("Choose one of your films.")
-    #elif pathname == "/page-1":
-    #    return html.P("This is the content of page 1. Yay!")
-    #elif pathname == "/page-2":
-    #    return html.P("Oh cool, this is page 2!")
-    # If the user tries to reach a different page, return a 404 message
-
     return dbc.Jumbotron(
         [
             html.H1("404: Not found", className="text-danger"),
